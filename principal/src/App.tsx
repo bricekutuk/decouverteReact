@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import PokemonCard from "./components/pokemonCard";
 import NavBar from "./components/NavBar";
@@ -30,6 +30,9 @@ const pokemonList = [
 ];
 
 function App() {
+  useEffect(() => {
+    console.log("hello pokemon trainer :)");
+  });
   const [pokemonName, setPokemonName] = useState("bulbasaur");
   const pokemon = pokemonList.find((pokemon) => pokemon.name === pokemonName);
   if (pokemon == null) {

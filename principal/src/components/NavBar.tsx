@@ -11,11 +11,16 @@ interface NavBarProps {
 function NavBar({ setPokemonName, pokemonList }: NavBarProps) {
   return (
     <nav>
-      {pokemonList.map((pokemon, _index) => (
+      {pokemonList.map((pokemon, index) => (
         <button
           key="index"
           type="button"
-          onClick={() => setPokemonName(pokemon.name)}
+          onClick={() => {
+            setPokemonName(pokemon.name);
+            if (index === 3) {
+              alert("pika pikachu !!!");
+            }
+          }}
         >
           {pokemon.name}
         </button>
